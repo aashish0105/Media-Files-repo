@@ -1,0 +1,23 @@
+{% extends 'firstapp/base.html' %}
+
+{% block title %}
+    <title>Display Files</title>
+{% endblock %}
+
+{% block content %}
+
+    {% if documents %}
+        <h4 style="color:red;"><u>Documents Uploaded</u></h4>
+        <ol>
+        {% for obj in documents %}
+            <div class="olclass">
+                <li><a href="{{ obj.document.url }}">{{ obj.description }}</a></li>
+            </div>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p style="color:red;">No documents.</p>
+    {% endif %}
+
+
+{% endblock %}
